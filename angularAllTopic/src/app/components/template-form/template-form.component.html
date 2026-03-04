@@ -1,0 +1,30 @@
+<form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
+
+  <input
+  type="text"
+  name="name"
+  [(ngModel)]="user.name"
+  required
+  minlength="3"
+  #nameRef="ngModel"
+>
+
+<div *ngIf="nameRef.invalid && nameRef.touched">
+  Name must be at least 3 characters
+</div>
+
+  <input
+    type="number"
+    name="age"
+    [(ngModel)]="user.age"
+    required
+    placeholder="Enter Age"
+    min="18"
+    #nameRef="ngModel"
+  >
+<div *ngIf="nameRef.invalid && nameRef.touched">
+  Age must be at least 18  years
+</div>
+  <button type="submit"  [disabled]="myForm.invalid">Submit</button>
+
+</form>
