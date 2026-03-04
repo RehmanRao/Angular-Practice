@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -20,7 +20,17 @@ set num(value:number){
 
 @Input()namee!:string;
 
+// child to parent
 
+ @Output() messageEvent = new EventEmitter<string>();
 
+  sendData() {
+    this.messageEvent.emit("Hello Parent");
+  }
+  // we can make the combination like we can send the object or array oer form data same way
+  @Output() numberEvent = new EventEmitter<number>();
+  sendNumber(){
+    this.numberEvent.emit(10);
+  }
 
 }

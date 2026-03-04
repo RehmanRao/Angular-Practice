@@ -23,7 +23,17 @@ this.name= "rema";
 // in child component we can take transform varaible if we wanna transform in input 
 // sytanx   set num(value: type){ this.transformvalue = value*10}
 
+childMessage: string = '';
 
+receiveMessage(data: string) {
+  this.childMessage = data;
+}
+
+childNumber: number=0;
+receiveNumber(data:number){
+  this.childNumber= data;
+}
 
 
 }
+   

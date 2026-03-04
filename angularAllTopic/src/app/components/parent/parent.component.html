@@ -1,3 +1,11 @@
 <button (click)="namePass()">Click</button>
 
-<app-child  [message]="message1"  [num] ="value"    [namee]="name"></app-child>
+<app-child  [message]="message1"  
+            [num] ="value"  
+            [namee]="name"
+            (messageEvent)="receiveMessage($event)"
+            (numberEvent)="receiveNumber($event)"
+            ></app-child>
+
+            {{childMessage}}   <!-- data is comimg from child -->
+            {{childNumber}}
